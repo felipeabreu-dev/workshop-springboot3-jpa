@@ -20,8 +20,8 @@ public class ProductService {
 		return obj;
 	}
 	
-	public Optional<Product> findById(Long id) {
+	public Product findById(Long id) {
 		Optional<Product> obj = productRepository.findById(id);
-		return obj;
+		return obj.get();
 	}
 }

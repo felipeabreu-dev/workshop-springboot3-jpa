@@ -5,7 +5,6 @@ import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.PathVariable;
 
 import com.educandoweb.course.entities.Category;
 import com.educandoweb.course.repositories.CategoryRepository;
@@ -20,7 +19,8 @@ public class CategoryService {
 		return categoryRepository.findAll();
 	}
 
-	public Optional<Category> findById(@PathVariable Long id) {
-		return categoryRepository.findById(id);
+	public Category findById(Long id) {
+		Optional<Category> obj = categoryRepository.findById(id);
+		return obj.get();
 	}
 }
